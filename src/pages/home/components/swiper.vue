@@ -19,7 +19,6 @@
         swiperOption: {
           pagination: '.swiper-pagination',
           loop: true,
-          observer:true,
         },
         imgList: [{
           id: '0001',
