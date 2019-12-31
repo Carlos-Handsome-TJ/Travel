@@ -2,14 +2,14 @@
   <div class="wrapper">
     <div class="item-destination">周末去哪儿</div>
     <ul>
-      <li class="item" v-for="item of imgList" :key="item.id">
+      <li class="item" v-for="item of list" :key="item.id">
         <div class="item-wrapper">
           <img class="item-img"
                :src="item.imgUrl" alt="">
         </div>
         <div class="item-content">
-          <p class="item-title">{{item.itemTitle}}</p>
-          <p class="item-desc">{{item.itemDesc}}</p>
+          <p class="item-title">{{item.title}}</p>
+          <p class="item-desc">{{item.desc}}</p>
         </div>
       </li>
     </ul>
@@ -19,24 +19,12 @@
 <script>
   export default {
     name: "homeWeekend",
+    props: {
+      list: Array
+    },
     data () {
       return {
-        imgList: [{
-          id: '001',
-          imgUrl: 'https://imgs.qunarzz.com/sight/source/1811/52/b6776b49d27025.jpg_r_640x214_35ae205c.jpg',
-          itemTitle: '精致暖汤',
-          itemDesc: '天然高品质温泉，这是冬天秀美容颜首选之地，让你疲惫的身影在这里消失的无影无踪'
-        }, {
-          id: '002',
-          imgUrl: 'https://imgs.qunarzz.com/sight/source/1811/52/b6776b49d27025.jpg_r_640x214_35ae205c.jpg',
-          itemTitle: '精致暖汤',
-          itemDesc: '天然高品质温泉，这是冬天秀美容颜首选之地，让你疲惫的身影在这里消失的无影无踪'
-        }, {
-          id: '003',
-          imgUrl: 'https://imgs.qunarzz.com/sight/source/1811/52/b6776b49d27025.jpg_r_640x214_35ae205c.jpg',
-          itemTitle: '精致暖汤',
-          itemDesc: '天然高品质温泉，这是冬天秀美容颜首选之地，让你疲惫的身影在这里消失的无影无踪'
-        }]
+
       }
     }
   }
@@ -50,6 +38,7 @@
       line-height: .8rem
       background: #eee
       text-indent: .2rem
+
       margin-top: .2rem
     .item
       width: 100%

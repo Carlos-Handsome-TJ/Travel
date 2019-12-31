@@ -16,7 +16,10 @@
 
 <script>
   export default {
-    name: "homeHeader"
+    name: "homeHeader",
+    props: {
+      city: String
+    }
   }
 </script>
 

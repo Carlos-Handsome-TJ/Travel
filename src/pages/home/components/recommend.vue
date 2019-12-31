@@ -4,12 +4,12 @@
       热销推荐
     </div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img class="item-img"
-             :src="item.itemUrl" alt="">
+             :src="item.imgUrl" alt="">
         <div class="item-info">
-          <p class="item-title">{{item.itemTitle}}</p>
-          <p class="item-desc">{{item.itemDesc}}</p>
+          <p class="item-title">{{item.title}}</p>
+          <p class="item-desc">{{item.desc}}</p>
           <button class="item-button">查看详情</button>
         </div>
       </li>
@@ -20,24 +20,12 @@
 <script>
   export default {
     name: "hoemRecommend",
+    props: {
+      list: Array
+    },
     data () {
       return {
-        recommendList: [{
-          id: '001',
-          itemUrl: 'http://img1.qunarzz.com/sight/p0/1603/c5/c5e2b211d10d4bb90.img.jpg_200x200_2a971b62.jpg',
-          itemTitle: '千岛湖天迹热气球',
-          itemDesc: '详情信息详情信息详情信息详情信息详情信息'
-        }, {
-          id: '002',
-          itemUrl: 'http://img1.qunarzz.com/sight/p0/1603/c5/c5e2b211d10d4bb90.img.jpg_200x200_2a971b62.jpg',
-          itemTitle: '千岛湖天迹热气球',
-          itemDesc: '详情信息详情信息详情信息详情信息详情信息'
-        }, {
-          id: '003',
-          itemUrl: 'http://img1.qunarzz.com/sight/p0/1603/c5/c5e2b211d10d4bb90.img.jpg_200x200_2a971b62.jpg',
-          itemTitle: '千岛湖天迹热气球',
-          itemDesc: '详情信息详情信息详情信息详情信息详情信息'
-        },]
+
       }
     }
   }

@@ -7,7 +7,6 @@ import 'styles/iconfont.css'
 import fastClick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
-import axios from 'axios'
 
 Vue.config.productionTip = false;
 fastClick.attach(document.body);
