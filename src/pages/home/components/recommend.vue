@@ -55,7 +55,7 @@
     display: flex
     height: 1.9rem
     overflow: hidden
-
+    margin-top: .1rem
 
     .item-img
       width: 1.7rem
