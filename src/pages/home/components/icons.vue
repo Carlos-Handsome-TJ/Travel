@@ -16,7 +16,7 @@
 <script>
   export default {
     name: "homeIcons",
-    data () {
+    data() {
       return {
         iconList: [{
           id: '0001',
@@ -58,7 +58,7 @@
       }
     },
     computed: {
-      pages () {
+      pages() {
         let pages = [];
         this.iconList.forEach((item, index) => {
           const page = Math.floor(index / 8);
@@ -81,6 +81,10 @@
     height: 0
     overflow: hidden
     padding-bottom: 50%
+
+    .icons
+      margin-top: .1rem
+
     .icon
       width: 25%
       height: 0
