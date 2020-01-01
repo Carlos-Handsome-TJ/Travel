@@ -8,7 +8,7 @@
       输入城市/景点/游玩主题
     </div>
     <div class="header-right">
-      城市
+      <router-link class="header-city" to="/city">城市</router-link>
       <span class="iconfont arrow-icon">&#xe64a;</span>
     </div>
   </div>
@@ -28,7 +28,7 @@
   .header
     height 0.86rem
     line-height 0.86rem
-    background $bgColor
+    background: $bgColor
     display flex
     color #fff
   .header-left
@@ -50,6 +50,8 @@
   .header-right
     width 1.24rem
     text-align center
+    .header-city
+      color #fff
     .arrow-icon
       font-size 0.24rem
 </style>
