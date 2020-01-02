@@ -1,48 +1,53 @@
 <template>
-  <div class="list">
-    <div class="wrapper">
-      <p class="current-city border-topbottom">当前城市</p>
-      <div class="item-wrapper border-bottom">
-        <button class="item-city">北京</button>
+  <div class="list" ref="scroll">
+    <div>
+      <div class="wrapper">
+        <p class="current-city border-topbottom">当前城市</p>
+        <div class="item-wrapper border-bottom">
+          <button class="item-city">北京</button>
+        </div>
       </div>
-    </div>
-    <div class="wrapper-hot">
-      <p class="current-city border-topbottom">当前城市</p>
-      <div class="city-hot">
-        <button class="item-city">北京</button>
-        <button class="item-city">北京</button>
-        <button class="item-city">北京</button>
-        <button class="item-city">北京</button>
-        <button class="item-city">北京</button>
+      <div class="wrapper-hot">
+        <p class="current-city border-topbottom">当前城市</p>
+        <div class="city-hot">
+          <button class="item-city">北京</button>
+          <button class="item-city">北京</button>
+          <button class="item-city">北京</button>
+          <button class="item-city">北京</button>
+          <button class="item-city">北京</button>
+        </div>
       </div>
-    </div>
-    <div class="wrapper-choose">
-      <p class="city-search border-topbottom">A</p>
-      <p class="city-item border-bottom">阿拉尔</p>
-      <p class="city-item border-bottom">阿拉尔</p>
-      <p class="city-item border-bottom">阿拉尔</p>
-      <p class="city-item border-bottom">阿拉尔</p>
-      <p class="city-item border-bottom">阿拉尔</p>
-      <p class="city-item border-bottom">阿拉尔</p>
-      <p class="city-item border-bottom">阿拉尔</p>
-      <p class="city-item border-bottom">阿拉尔</p>
-      <p class="city-item border-bottom">阿拉尔</p>
-      <p class="city-item border-bottom">阿拉尔</p>
-      <p class="city-item border-bottom">阿拉尔</p>
-      <p class="city-item border-bottom">阿拉尔</p>
-      <p class="city-item border-bottom">阿拉尔</p>
-      <p class="city-item border-bottom">阿拉尔</p>
-      <p class="city-item border-bottom">阿拉尔</p>
-      <p class="city-item border-bottom">阿拉尔</p>
-      <p class="city-item border-bottom">阿拉尔</p>
-
+      <div class="wrapper-choose">
+        <p class="city-search border-topbottom">A</p>
+        <p class="city-item border-bottom">阿拉尔</p>
+        <p class="city-item border-bottom">阿拉尔</p>
+        <p class="city-item border-bottom">阿拉尔</p>
+        <p class="city-item border-bottom">阿拉尔</p>
+        <p class="city-item border-bottom">阿拉尔</p>
+        <p class="city-item border-bottom">阿拉尔</p>
+        <p class="city-item border-bottom">阿拉尔</p>
+        <p class="city-item border-bottom">阿拉尔</p>
+        <p class="city-item border-bottom">阿拉尔</p>
+        <p class="city-item border-bottom">阿拉尔</p>
+        <p class="city-item border-bottom">阿拉尔</p>
+        <p class="city-item border-bottom">阿拉尔</p>
+        <p class="city-item border-bottom">阿拉尔</p>
+        <p class="city-item border-bottom">阿拉尔</p>
+        <p class="city-item border-bottom">阿拉尔</p>
+        <p class="city-item border-bottom">阿拉尔</p>
+        <p class="city-item border-bottom">阿拉尔</p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+  import BScroll from 'better-scroll'
     export default {
-        name: "cityList"
+      name: "cityList",
+      mounted() {
+        this.scroll = new BScroll(this.$refs.scroll);
+      }
     }
 </script>
 
