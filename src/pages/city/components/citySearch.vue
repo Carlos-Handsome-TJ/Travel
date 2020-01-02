@@ -24,5 +24,5 @@
       text-align: center
       outline: none
       border-radius: .08rem
-      color: #fff
+      color: #000
 </style>
