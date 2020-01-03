@@ -8,34 +8,18 @@
         </div>
       </div>
       <div class="wrapper-hot">
-        <p class="current-city border-topbottom">当前城市</p>
+        <p class="current-city border-topbottom">热门城市</p>
         <div class="city-hot">
-          <button class="item-city">北京</button>
-          <button class="item-city">北京</button>
-          <button class="item-city">北京</button>
-          <button class="item-city">北京</button>
-          <button class="item-city">北京</button>
+          <button class="item-city" v-for="item of hot" :key="item.id">{{item.name}}</button>
         </div>
       </div>
-      <div class="wrapper-choose">
-        <p class="city-search border-topbottom">A</p>
-        <p class="city-item border-bottom">阿拉尔</p>
-        <p class="city-item border-bottom">阿拉尔</p>
-        <p class="city-item border-bottom">阿拉尔</p>
-        <p class="city-item border-bottom">阿拉尔</p>
-        <p class="city-item border-bottom">阿拉尔</p>
-        <p class="city-item border-bottom">阿拉尔</p>
-        <p class="city-item border-bottom">阿拉尔</p>
-        <p class="city-item border-bottom">阿拉尔</p>
-        <p class="city-item border-bottom">阿拉尔</p>
-        <p class="city-item border-bottom">阿拉尔</p>
-        <p class="city-item border-bottom">阿拉尔</p>
-        <p class="city-item border-bottom">阿拉尔</p>
-        <p class="city-item border-bottom">阿拉尔</p>
-        <p class="city-item border-bottom">阿拉尔</p>
-        <p class="city-item border-bottom">阿拉尔</p>
-        <p class="city-item border-bottom">阿拉尔</p>
-        <p class="city-item border-bottom">阿拉尔</p>
+      <div class="wrapper-choose"
+           v-for="(item, key) of cities"
+           :key="key"
+           :ref="key"
+      >
+        <p class="city-search border-topbottom">{{key}}</p>
+        <p class="city-item border-bottom" v-for="innerItem of item" :key="innerItem.id">{{innerItem.name}}</p>
       </div>
     </div>
   </div>
@@ -45,6 +29,24 @@
   import BScroll from 'better-scroll'
     export default {
       name: "cityList",
+      props: {
+        hot: Array,
+        cities: Object,
+        letter: String
+      },
+      data() {
+        return {
+          touchStatus: false
+        }
+      },
+      watch: {
+        letter() {
+          if (this.letter) {
+            const element = this.$refs[this.letter][0];
+            this.scroll.scrollToElement(element);
+          }
+        }
+      },
       mounted() {
         this.scroll = new BScroll(this.$refs.scroll);
       }
@@ -111,7 +113,6 @@
           height: .5rem
           line-height: .5rem
           text-align: center
-          background: #fff
           border: .01rem solid #ccc
           border-radius: .09rem
           outline: none
