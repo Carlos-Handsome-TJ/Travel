@@ -49,7 +49,7 @@
       },
       mounted() {
         this.scroll = new BScroll(this.$refs.scroll);
-      }
+      },
     }
 </script>
 
