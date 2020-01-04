@@ -4,13 +4,17 @@
       <div class="wrapper">
         <p class="current-city border-topbottom">当前城市</p>
         <div class="item-wrapper border-bottom">
-          <button class="item-city">北京</button>
+          <button class="item-city">{{this.$store.state.city}}</button>
         </div>
       </div>
       <div class="wrapper-hot">
         <p class="current-city border-topbottom">热门城市</p>
         <div class="city-hot">
-          <button class="item-city" v-for="item of hot" :key="item.id">{{item.name}}</button>
+          <button class="item-city"
+                  v-for="item of hot"
+                  :key="item.id"
+                  @click="handleHotClick(item.name)"
+          >{{item.name}}</button>
         </div>
       </div>
       <div class="wrapper-choose"
@@ -19,7 +23,11 @@
            :ref="key"
       >
         <p class="city-search border-topbottom">{{key}}</p>
-        <p class="city-item border-bottom" v-for="innerItem of item" :key="innerItem.id">{{innerItem.name}}</p>
+        <p class="city-item border-bottom"
+           v-for="innerItem of item"
+           :key="innerItem.id"
+           @click="handleHotClick(innerItem.name)"
+        >{{innerItem.name}}</p>
       </div>
     </div>
   </div>
@@ -37,6 +45,12 @@
       data() {
         return {
           touchStatus: false
+        }
+      },
+      methods: {
+        handleHotClick(city) {
+          this.$store.dispatch('changeCity', city);
+          this.$router.push('/')
         }
       },
       watch: {
