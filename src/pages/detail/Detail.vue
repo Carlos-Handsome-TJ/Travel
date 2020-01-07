@@ -5,16 +5,19 @@
       :sightName="sightName"
       :gallaryImgs="gallaryImgs"
     />
+    <detail-header></detail-header>
   </div>
 </template>
 
 <script>
   import axios from 'axios'
   import banner from "./component/banner";
+  import detailHeader from "./component/header";
     export default {
       name: "Detail",
       components: {
-        banner
+        banner,
+        detailHeader
       },
       data() {
         return {
